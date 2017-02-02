@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+  content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="robots" content="noindex">
+  <title>『マチネの終わりに』特設サイト | 平野啓一郎</title>
+  <link rel="stylesheet" href="coding.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.inview.js"></script>
+  <!---<script src="jquery.matchHeight-min.js"></script>-->
+</head>
+<script>
+$(function(){
+  $(".open_button.readers_open").click(function(){
+    $(this).addClass('open');
+    $('.voice_box').removeClass('hide');
+    $('.deco_right.first').addClass('open');
+  })
+});
+$(function(){
+  $(".profile_open.open_button").click(function(){
+    $(this).addClass('open');
+    $(".profile_main_text").addClass('open');
+  })
+});
+$(function(){
+  $(".open_button.creator_open").click(function(){
+    $(this).addClass('open');
+    $('.creator_box').removeClass('hide');
+  })
+});
+/*$(function() {
+    $('.voice_box').matchHeight();
+});*/
+$(function() {
+  $('.effect').one('inview', function(event, isInView, visiblePartX, visiblePartY) {
+    if(isInView){
+      $(this).stop().addClass('move');
+    }
+    else{
+      $(this).stop().removeClass('move');
+    }
+  });
+
+  $(window).load(function () {
+    $("#top_info").addClass("scale");
+  });
+
+  $("#toggle_nav_sp").click(function(){
+    $(this).toggleClass('open');
+    $("#nav_menu_sp").toggleClass('open');
+  });
+
+  $("#nav_menu_sp a").click(function(){
+    $('#toggle_nav_sp').toggleClass('open');
+    $('#nav_menu_sp').toggleClass('open');
+    var speed = 400;
+    var href = $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top - $('#nav_sp').height() + 'px';
+    $('body,html').animate({
+      scrollTop:position
+    }, speed, 'swing');
+    return false;
+  });
+
+
+  $(".nav_left_link a").click(function(){
+    var speed = 400;
+    var href = $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top;
+    $('body,html').animate({
+      scrollTop:position
+    }, speed, 'swing');
+    return false;
+  });
+
+});
+
+</script>
+
+<body>
+  <header>
+    <div id="nav_sp">
+      <div id="nav_sp_Container">
+        <div id="toggle_nav_sp">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="button_nav_sp">
+          <ul class="nav_right">
+            <li class="nav_right_link share"><a href="#" class="button color-black radius text-only">シェア</a></li>
+            <li class="nav_right_link amazon"><a href="https://www.amazon.co.jp/%E3%83%9E%E3%83%81%E3%83%8D%E3%81%AE%E7%B5%82%E3%82%8F%E3%82%8A%E3%81%AB-%E5%B9%B3%E9%87%8E-%E5%95%93%E4%B8%80%E9%83%8E/dp/4620108197" class="button radius amazon1">amazonで購入<span class="arrow color-yellow"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div><!--nav_sp-->
+
+      <div id="nav_menu_sp">
+        <ul>
+          <li><a href="#story">あらすじ</a></li>
+          <li><a href="#readers_voice">愛読者の声</a></li>
+          <li><a href="#message">作者メッセージ</a></li>
+          <li><a href="#creater">コラボ</a></li>
+        </ul>
+        <p><a href="#" class="button color-white radius">平野啓一郎　公式サイト<span class="arrow color-yellow"></span></a></p>
+      </div>
+
+    <div id="nav_menu_pc">
+      <div class="nav_menu_container">
+        <ul class="nav_left">
+          <li class="nav_left_link"><a href="#story">あらすじ</a></li>
+          <li class="nav_left_link"><a href="#readers_voice">愛読者の声</a></li>
+          <li class="nav_left_link"><a href="#">書店員の声</a></li>
+          <li class="nav_left_link"><a href="#message">作者メッセージ</a></li>
+          <li class="nav_left_link"><a href="#creater">コラボ</a></li>
+        </ul>
+        <ul class="nav_right">
+          <li class="nav_right_link share"><a href="#" class="button color-black radius text-only">シェア</a></li>
+          <li class="nav_right_link amazon"><a href="https://www.amazon.co.jp/%E3%83%9E%E3%83%81%E3%83%8D%E3%81%AE%E7%B5%82%E3%82%8F%E3%82%8A%E3%81%AB-%E5%B9%B3%E9%87%8E-%E5%95%93%E4%B8%80%E9%83%8E/dp/4620108197" class="button radius amazon1">amazonで購入<span class="arrow color-yellow"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <main>
+
+    <div id="top">
+      <div id="top_info">
+        <div id="title">マチネの終わりに</div>
+        <div id="author">平野　啓一郎</div>
+      </div>
+    </div>
+
+    <div id="info">
+      <div id="info_main">
+        <div id="info_main_container">
+          <h1>大切なお知らせ</h1>
+          <p>『マチネの終わりに』特設サイトをご覧いただきありがとうございます。<br>
+            販売直後から好評につき、amazonでは売り切れとなっておりましたが
+            <span class="stress">増刷を⾏い再入荷</span>いたしました。<br>
+            全国の書店・kindleでもお求めいただけます。また、『マチネの終わりに』のCDが発売されました。
+            詳細は<a href="https://storeshirano.stores.jp/items/57d79112a458c094ea0004f1"><span class="stress">こちらから</span></a>
+          </p>
+        </div>
+      </div>
+
+      <div id="info_sub">
+        <div id="info_sub_container effect clearfix">
+          <div class="info_sub_box left effect">
+            <img class="info_sub_box_img" src="img/letter.png">
+            <h2>平野啓一郎のメールレター</h2>
+            <p>「マチネの終わりに」を始め、<br>
+              平野啓一郎から最新情報をお届けします。
+            </p>
+            <a class="info_sub_button button radius color-black">登録はこちら<span class="arrow color-white"></span></a>
+          </div>
+          <div class="info_sub_box right effect">
+            <h2>イベント・メディア出演情報</h2>
+            <p>最新のイベント情報やメディア出演情報を<br>
+              公式サイトで発信しています。
+            </p>
+            <a class="info_sub_button button radius color-black">最新情報はこちら<span class="arrow color-white"></span></a>
+          </div>
+        </div>
+      </div><!--info_sub-->
+    </div><!--info--->
+
+    <div id="story">
+      <div class="main_container">
+        <h1 class="effect">
+          <span class="h1_component color-blue">あ</span><span class="h1_component">ら</span><span class="h1_component">す</span><span class="h1_component">じ</span>
+        </h1>
+        <div id="story_text_box_container">
+          <div class="story_text_box left effect">
+            <p class="indent">毎日新聞とnoteで連載されていた、平野啓一郎の長編小説です。</p>
+            <p><br></p>
+            <p class="indent">物語は、クラシックギタリストの蒔野と、海外の通信社に勤務する洋子の出会いから始まります。初めて出会った時から、強く惹かれ合っていた二人。しかし、洋子には婚約者がいました。やがて、蒔野と洋子の間にすれ違いが生じ、ついに二人の関係は途絶えてしまいます。互いへの愛を断ち切れぬまま、別々の道を歩む二人の運命が再び交わる日はくるのか－</p>
+          </div>
+          <div class="story_text_box right effect">
+            <p class="indent">中心的なテーマは恋愛ではあるものの、様々なテーマが複雑に絡み合い、蒔野と洋子を取り巻く出来事と、答えのでない問いに、連載時の読者は翻弄されっぱなし。ずっと"「ページをめくりたいけどめくりたくない、ずっとその世界に浸りきっていたい」小説"を考えてきた平野啓一郎が贈る、「40代をどう生きるか？」を読者に問いかける作品です。</p>
+          </div>
+        </div>
+      </div><!--main_container-->
+      <div id="guitar" class="effect"><img src="img/guitar.png"></div>
+    </div><!--story-->
+
+    <div id="readers_voice">
+      <div class="main_container">
+        <div class="readers_voice_top_container">
+          <h1 class="readers_voice_top_title effect">
+            <span class="h1_component">愛</span><span class="h1_component">読</span><span class="h1_component">者</span><span class="h1_component">の</span><span class="h1_component color-blue">声</span>
+          </h1>
+          <p class="readers_voice_top_text effect"><span>愛読者の皆様から寄せられた感想をご紹介します。</span>
+            <br>
+            <span>また、「#マチネの終わりに」タグでの感想、お待ちしてます！</span></p>
+        </div><!--readers_voice_top_container-->
+
+        <div class="readers_voice_main_container">
+          <div class="readers_voice_main_inner_container clearfix">
+            <div class="voice_box first effect">
+              <div class="deco_left effect">“</div>
+              <div class="voice_text">
+                <p>洋子の「なぜなのかしら...」という決して答えの出ない問いに引き裂かれる思いでした。洋子のこの問いは、「なぜこんなことが起こらなければならないのかしら」という個々の人間の意思を超えた「どうにもできない何か」に対する問いに思えました。素敵な物語をありがとうございます。単行本化を心待ちにしております。</p>
+              </div>
+              <div class="voice_name">
+                <p>エグスタム(20代)</p>
+              </div>
+            </div>
+            <div class="voice_box effect">
+              <div class="voice_text"><!--style="height: 285px"-->
+                <p>人よりいくらか小説を読む私が最も読まないのが恋愛小説ですが、戸惑うほど彼らに心乱されました。ただ深いだけの愛が描かれているわけではなく、彼らをとりまく環境や社会情勢も丁寧に描写されているところが、これまで経験したことのない感情を味わわせてくれました。<span class="blank">空白空白空白空白空白空白空白空白空白空白空白</span></p>
+              </div>
+              <div class="voice_name">
+                <p>藤村結香さん</p>
+              </div>
+            </div>
+
+            <div class="voice_box effect">
+              <div class="voice_text">
+                <p>人よりいくらか小説を読む私が最も読まないのが恋愛小説ですが、戸惑うほど彼らに心乱されました。ただ深いだけの愛が描かれているわけではなく、彼らをとりまく環境や社会情勢も丁寧に描写されているところが、これまで経験したことのない感情を味わわせてくれました。</p>
+              </div>
+              <div class="voice_name">
+                <p>藤村結香さん</p>
+              </div>
+            </div>
+            <div class="voice_box effect">
+              <div class="voice_text"><!--style="height: 253px"-->
+                <p>終盤、滂沱しました。中盤の憤懣やるかたない気持ちにさせられる事件から、あらゆる感情を超えて特別な静謐に達した男女の邂逅までの展開。 平野さん、完全にやられましたよ。しばらく恋愛小説は読めそうにありません。<span class="blank">空白空白空白空白空白空白空白空白空白空白空白空</span></p>
+              </div>
+              <div class="voice_name">
+                <p>花本武さん</p>
+              </div>
+              <div class="deco_right first effect">“</div>
+            </div>
+
+            <div class="voice_box hide effect">
+              <div class="voice_text">
+                <p>恋愛とは何か、どうして恋が生まれるのか、そんなシンプルな疑問に答えてくれる作品です。プラトニックな二人ですが、切なくなるような二人の会話に心動かされました。「未来は常に過去を変えている」何度かでてくるこのフレーズがとても心に残りました。</p>
+              </div>
+              <div class="voice_name">
+                <p>三瓶ひとみさん</p>
+              </div>
+            </div>
+            <div class="voice_box hide effect">
+              <div class="voice_text"><!--style="height: 253px"-->
+                <p>小説を読むことでしか得られない精神的な喜びを、久しぶりに得ることが出来ました。素晴らしい物語をありがとうございました。最後は深くて大きな「愛」に包まれるような気持ちで読み終えました。私も完全に「マチネロス」の一人となりました。<span class="blank">空白空白空</span></p>
+              </div>
+              <div class="voice_name">
+                <p>野尻真さん</p>
+              </div>
+            </div>
+
+            <div class="voice_box hide effect">
+              <div class="voice_text">
+                <p>ヒロインの洋子さんがとにかく素敵!彼女が幸せになれるのか心配で、毎朝新聞読むたびにはらはらしていました。知的で行動的で、強靭なのに繊細で、中年の美女と言いつつ美少年っぽい爽快さがあって。離婚後の仕事ぶりとか震災後の行動とか、自分にもっと能力と気概があったらこんなふうに生きてみたいと思いました。<span class="blank">空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白</span></p>
+              </div>
+              <div class="voice_name">
+                <p>アルシネ(50代)</p>
+              </div>
+            </div>
+            <div class="voice_box hide effect">
+              <div class="voice_text">
+                <p>noteでは、その時々に使われている音楽を紹介して下さっていたので、新聞専門の母にも動画を紹介したりして、家族でこの世界により深く入り込めました。毎日の通勤電車が楽しみになるほどで、家族とも話し合う事が多かったです。槙野さんと洋子さんが様々な出来事に翻弄されながらも、自分の心と人生に誠実に向き合う姿に感動しました。読み終えた時は、自分の過去の傷さえも、そっと癒してもらえたような優しさを感じていました。</p>
+              </div>
+              <div class="voice_name">
+                <p>Phatthai(30代)</p>
+              </div>
+            </div>
+
+            <div class="voice_box hide effect">
+              <div class="voice_text"><!-- style="height: 285px"-->
+                <p>心のトキメキ、ロマン、そして焦燥感にかられて一気に読んでしまいました。<span class="blank">空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白</span></p>
+              </div>
+              <div class="voice_name">
+                <p>水口真佐美さん</p>
+              </div>
+            </div>
+            <div class="voice_box hide effect">
+              <div class="voice_text"><!-- style="height: 381px"-->
+                <p>現在と過去と未来について考える。付随する出来事によって、それぞれのエピソードの意味が変わるなんて、これまで考えたことなかった。なんだかすごいものを読んでしまった。</p>
+              </div>
+              <div class="voice_name">
+                <p>奥川由紀子さん</p>
+              </div>
+            </div>
+
+            <div class="voice_box hide effect">
+              <div class="voice_text">
+                <p>平野さんの本は「葬送」以外読みましたが、今までの作品の中でも一番好きです。まるで絵画を見ているような美しさを感じました。色々なテーマが複雑にからみ合っていることや、「どうしてこんなことに...!」とやきもきするのも読んでいて楽しかったです。単行本の発売を物凄く楽しみにしています。</p>
+              </div>
+              <div class="voice_name">
+                <p>Mari(30代)</p>
+              </div>
+            </div>
+            <div class="voice_box hide effect">
+              <div class="voice_text"><!-- style="height: 285px"-->
+                <p>明日死ぬなら、少しでもこれを読んで死にたいと思ってしまったのです。本を読んでいて、明日死ぬならなんて考えたことは初めてで、これは物語のテーマと平野さんにしか書き得ない文章の存在感に飲み込まれたからだと思います。<span class="blank">空白空白空白空白空白空白空白空白空白空白空白空白空白空白空白空</span></p>
+              </div>
+              <div class="voice_name">
+                <p>竹田勇生さん</p>
+              </div>
+            </div>
+
+            <div class="voice_box hide effect">
+              <div class="voice_text">
+                <p>こんなに高尚で謙虚な恋はしたことがないが、妙齢の女性の微妙な心理、行動への共感は激しく、昔と現在の自分を比較したり、思い出したりした。小説を読む醍醐味を満喫できた。<span class="blank">空白空白空白</span></p>
+              </div>
+              <div class="voice_name">
+                <p>中村優子さん</p>
+              </div>
+            </div>
+            <div class="voice_box hide last effect">
+              <div class="voice_text"><!-- style="height: 189px"-->
+                <p>人をたまらなく好きになる時のあの想い、この人でなければと心がささやく確かな気持ち。“運命の人はきっといる”そう思わせてくれる一冊でした。恋愛小説というよりも、真実の愛の物語ですね。</p>
+              </div>
+              <div class="voice_name">
+                <p>佐伯敦子さん</p>
+              </div>
+              <div class="deco_right second effect">“</div>
+            </div>
+          </div><!--readers_voice_main_inner_container-->
+          <a class="open_button button color-black readers_open effect">すべての声を見る</a>
+          <div id="pen"><img src="img/pen.png" class="effect"></div>
+        </div><!--readers_voice_main_container-->
+      </div><!--main_container-->
+    </div><!--readers_voice-->
+
+    <div id="message">
+      <div class="main_container">
+        <div class="message_main effect">
+          <h1><span class="h1_large">読者</span><span class="remainder">へのメッセージ</span></h1>
+          <p>小説の中心的なテーマは「恋愛」ですが、<br>
+          そこは僕の小説ですので、<br>
+          文明と文化、喧噪と静寂、生と死、更には40代の困難、父と娘、<br>
+          《ヴェニスに死す》症候群、リルケの詩、……といった、<br>
+          硬軟、大小様々なテーマが折り重なって、重層的な作りになっています。<br>
+          もちろん、全篇にわたって音楽の存在は重要です！<br>
+          『透明な迷宮』以来、「ページをめくる手が止まらない」小説ではなく、<br>
+          「ページをめくりたいけどめくりたくない、<br>
+          ずっとその世界に浸りきっていたい」小説というのを考えてきました。<br>
+          何かとくたびれる世の中ですが、<br>
+          小説を読むことでしか得られない精神的なよろこびを、改めて、<br>
+          追求したいと思っています。<br>
+          </p>
+        </div>
+        <div class="message_sub effect">
+          <div class="message_sub_amazon_img">
+            <a><img src="img/cover.png"></a>
+          </div>
+          <div class="message_sub_amazon_button radius2 button">
+            <a href="https://www.amazon.co.jp/%E3%83%9E%E3%83%81%E3%83%8D%E3%81%AE%E7%B5%82%E3%82%8F%E3%82%8A%E3%81%AB-%E5%B9%B3%E9%87%8E-%E5%95%93%E4%B8%80%E9%83%8E/dp/4620108197?ie=UTF8&qid=&ref_=tmm_hrd_swatch_0&sr=">amazonで購入<span class="arrow color-yellow"></span></a>
+          </div>
+        </div>
+    </div>
+      <div id="paper-airplane">
+        <img src="img/paper-airplane.png">
+      </div>
+    </div><!--message-->
+
+    <div id="profile">
+      <div class="main_container clearfix">
+        <div class="border_dash"></div>
+        <div class="profile_main effect">
+          <div class="profile_main_inner clearfix">
+            <div class="profile_main_img">
+              <h1>平野啓一郎<span class="small">(小説家)</span></h1>
+              <img src="img/portrait.jpg">
+            </div>
+            <div class="profile_main_text">
+              <p>1975年愛知県蒲郡市生。北九州市出身。京都大学法学部卒。1999年在学中に文芸誌「新潮」に投稿した『日蝕』により第120回芥川賞を受賞。以後、数々の作品を発表し、各国で翻訳紹介されている。2004年には、文化庁の「文化交流使」として一年間、パリに滞在。2008年からは、三島由紀夫文学賞選考委員、東川写真賞審査員を務める。美術、音楽にも造詣が深く、幅広いジャンルで批評を執筆。2009年以降、日本経済新聞の「アートレビュー」欄を担当している。2014年、フランス芸術文化勲章シュヴァリエを受章。著書は小説、『葬送』『滴り落ちる時計たちの波紋』『決壊』（芸術選奨文部科学大臣新人賞受賞）『ドーン』（ドゥマゴ文学賞受賞）『かたちだけの愛』『空白を満たしなさい』、『透明な迷宮』、エッセイ・対談集に『私とは何か 「個人」から「分人」へ』『「生命力」の行方～変わりゆく世界と分人主義』等がある。</p>
+            </div>
+            <a class="open_button button effect color-white profile_open">すべてを見る</a>
+          </div><!--profile_main_inner-->
+        </div><!--profile_main-->
+
+        <div class="profile_works clearfix">
+          <div class="profile_works_inner effect">
+            <h1>これまでの作品</h1>
+            <ul class="profile_works_img">
+              <li><img src="img/blank_up.jpg"></li>
+              <li><img src="img/blank_under.jpg"></li>
+              <li><img src="img/transparent.jpg"></li>
+              <li><img src="img/moonstory.jpg"></li>
+              <li><img src="img/whatsme.jpg"></li>
+            </ul>
+          </div>
+          <a class="profile_worls_link">作品一覧へ</a>
+        </div>
+
+        <div class="profile_mail">
+          <div class="profile_mail_inner effect">
+            <img class="mail_img" src="img/letter.png">
+            <h2>平野啓一郎のメールレター</h2>
+            <p>「マチネの終わりに」を始め、<br>
+            平野啓一郎から最新情報をお届けします。</p>
+            <a class="profile_mail_button color-black button radius">登録はこちら<span class="arrow color-white"></span></a>
+          </div>
+        </div>
+      </div><!--main_container-->
+    </div><!--profile-->
+
+    <div id="creater">
+      <div class="main_container">
+        <div class="creator_top">
+          <img src="img/creator-collaboration.png" class="effect">
+          <div class="creator_top_text effect">
+            <h1>コラボクリエイター</h1>
+            <p><span class="creator_top_text_white">noteとの<span class="underline">連動企画</span>として、アーティストの皆さんとコラボレーションをしました。</span><br>
+            <span class="creator_top_text_white">『マチネの終わりに』をテーマに、作品を制作してもらうというものです。</span><br>
+            <span class="creator_top_text_white">4⽉にはヒカリエで展⽰会も開催されました。</span></p>
+          </div>
+        </div>
+        <div class="creator_profiles clearfix">
+          <div class="creator_box effect">
+            <a><img class="creator_img" src="img/Koshi-Kawachi.png"></a>
+            <div class="creator_box_text">
+              <h2 class="creator_name"><span>Koshi Kawachi</span></h2>
+              <p class="creator_info">現代美術作家。東京拠点に国内外で活動。彫刻的なアプローチで<br>
+                日常におけるフィクションをテーマに制作を行なう。</p>
+            </div>
+          </div>
+          <div class="creator_box effect">
+            <a><img class="creator_img" src="img/whole9.png"></a>
+            <div class="creator_box_text">
+              <h2 class="creator_name"><span>WHOLE9</span></h2>
+              <p class="creator_info">ライブペイント、壁画制作を中心に活動するアートユニット。<br>
+                2007年に結成し、具象モチーフを描くhitchと抽象モチーフを...</p>
+            </div>
+          </div>
+
+          <div class="creator_box effect">
+            <a><img class="creator_img" src="img/teramura.png"></a>
+            <div class="creator_box_text">
+              <h2 class="creator_name"><span>寺村サチコ</span></h2>
+              <p class="creator_info">女性の持つキラキラとその裏に潜むドロドロに魅力を感じ、それ<br>
+                らを同時に感じさせることのできるような立体造形物を制作…</p>
+            </div>
+          </div>
+          <div class="creator_box effect">
+            <a><img class="creator_img" src="img/oosima.png"></a>
+            <div class="creator_box_text">
+              <h2 class="creator_name"><span>大嶋奈都子</span></h2>
+              <p class="creator_info">イラストレーター。主に、スタンプを用いたイラストを制作して<br>
+                います。その他、ペンでも制作します。制作過程をこのnote上…</p>
+            </div>
+          </div>
+
+          <div class="creator_box hide effect">
+            <a><img class="creator_img" src="img/inhan.png"></a>
+            <div class="creator_box_text">
+              <h2 class="creator_name"><span>因幡都頼</span></h2>
+              <p class="creator_info">現代の流行りや風潮をモチーフに、その時代が固有する概念によ<br>
+                って認識させられている範囲の外側を絵画作品として制作……</p>
+            </div>
+          </div>
+          <div class="creator_box hide effect">
+            <a><img class="creator_img" src="img/akaba.png"></a>
+            <div class="creator_box_text">
+              <h2 class="creator_name"><span>赤羽佑樹</span></h2>
+              <p class="creator_info">ここでは「マチネの終わりに」を読んで考えたことや、制作の過<br>
+                程などを書いていけたらと思っています。</p>
+            </div>
+          </div>
+
+          <div class="creator_box hide effect">
+            <a><img class="creator_img" src="img/saitoutakahiko.png"></a>
+            <div class="creator_box_text">
+              <h2 class="creator_name"><span>サイトウタカヒコ</span></h2>
+              <p class="creator_info">人形を作り、それをつかった写真作品を作っているサイトウタカ<br>
+                ヒコです。</p>
+            </div>
+          </div>
+          <div class="creator_box hide effect">
+            <a><img class="creator_img" src="img/sanokeiko.png"></a>
+            <div class="creator_box_text">
+              <h2 class="creator_name"><span>佐野景子</span></h2>
+              <p class="creator_info">何かの事象に対する認識の変換にや自分なりに「わかる」という<br>
+                体験を出発点に作品を制作しています。</p>
+            </div>
+          </div>
+
+          <div class="creator_box hide effect">
+            <a><img class="creator_img" src="img/oomura.png"></a>
+            <div class="creator_box_text">
+              <h2 class="creator_name"><span>大村雪乃</span></h2>
+              <p class="creator_info">『マチネの終わりに』を題材に私がイメージを膨らませて来年ヒ<br>
+                カリエで作品を発表します。</p>
+            </div>
+          </div>
+
+        </div><!--creator_profiles-->
+        <a class="open_button button effect color-black creator_open">すべてのコラボを見る</a>
+      </div><!--main_container-->
+    </div><!--creator-->
+
+    <div id="sns">
+      <div id="sns_border"></div>
+      <div class="main_container">
+        <div class="sns_left effect">
+          <div class="sns_left_inner">
+            <img id="heart" src="img/heart.png">
+            <div class="sns_left_mail">
+              <h2>平野啓一郎のメールレター</h2>
+              <p>「マチネの終わりに」を始め、<br>
+                平野啓一郎から最新情報をお届けします。</p>
+                <a class="info_sub_button button color-black radius">登録はこちら<span class="arrow color-white"></span></a>
+            </div>
+            <div class="sns_left_account">
+              <h2><span>公式アカウント</span></h2>
+              <ul>
+                <li><a class="button radius twitter">Twitter<span class="arrow twitter"></span></a></li>
+                <li><a class="button radius line">LINE BROG<span class="arrow line"></span></a></li>
+                <li><a class="button radius cakes">cakes<span class="arrow cakes"></span></a></li>
+                <li><a class="button radius note">note<span class="arrow note"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sns_right">
+        </div>
+      </div>
+    </div><!--sns-->
+
+    <div id="footer">
+      <div class="main_container">
+        <div class="footer_left clearfix">
+          <div class="footer_img">
+            <img src="img/cover.png">
+          </div>
+          <div class="footer_left_info">
+            <p>マチネの終わりに</p>
+            <p>平野啓一郎 著</p>
+            <a href="https://www.amazon.co.jp/%E3%83%9E%E3%83%81%E3%83%8D%E3%81%AE%E7%B5%82%E3%82%8F%E3%82%8A%E3%81%AB-%E5%B9%B3%E9%87%8E-%E5%95%93%E4%B8%80%E9%83%8E/dp/4620108197" class="button radius2 amazon1">amazonで購入<span class="arrow color-yellow"></span></a>
+          </div>
+        </div><!--footer_left-->
+
+        <div class="footer_right clearfix">
+          <div class="footer_right_box">
+            <h2>CONNECT</h2>
+              <ul>
+                <li><a><span class="arrow footer"></span>LINEBLOG</a></li>
+                <li><a><span class="arrow footer"></span>cakes</a></li>
+                <li><a><span class="arrow footer"></span>note</a></li>
+                <li><a><span class="arrow footer"></span>Facebook</a></li>
+                <li><a><span class="arrow footer"></span>Twitter</a></li>
+              </ul>
+          </div>
+          <div class="footer_right_box">
+            <h2>SITEMAP</h2>
+              <ul>
+                <li><a><span class="arrow footer"></span>公式サイト</a></li>
+                <li><a><span class="arrow footer"></span>お問い合わせ</a></li>
+              </ul>
+          </div>
+        </div>
+        <p class="credit">© 2016 Cork, Inc.</p>
+      </div><!--main_container-->
+    </div><!--footer-->
+
+  </main>
+
+</body>

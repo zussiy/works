@@ -1,0 +1,1155 @@
+  <!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex" />
+  <title>曽田正人公式サイト｜</title>
+  <link rel="stylesheet" href="coding.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.inview.js"></script>
+
+<script>
+$(function(){
+  $(window).on("scroll", function () {
+    if ($(this).scrollTop() > 300) {
+      $(".gnav_hide").fadeIn("slow");
+      $(".gnav_hide_logo").addClass("move");
+    } else {
+      $(".gnav_hide").fadeOut("slow");
+      $(".gnav_hide_logo").removeClass("move");
+    }
+  });
+
+  $('.gnav_link.top').on({
+		'mouseenter':function(){
+			sethover = setTimeout(function(){
+        $(".gnav_link.top").addClass("delay");
+			},300);
+		},
+		'mouseleave':function(){
+      $(".gnav_link.top").removeClass("delay");
+			clearTimeout(sethover);
+		}
+	});
+  $('.gnav_link.gallely').on({
+		'mouseenter':function(){
+			sethover = setTimeout(function(){
+        $(".gnav_link.gallely").addClass("delay");
+			},300);
+		},
+		'mouseleave':function(){
+      $(".gnav_link.gallely").removeClass("delay");
+			clearTimeout(sethover);
+		}
+	});
+  $('.gnav_link.profile').on({
+		'mouseenter':function(){
+			sethover = setTimeout(function(){
+        $(".gnav_link.profile").addClass("delay");
+			},300);
+		},
+		'mouseleave':function(){
+      $(".gnav_link.profile").removeClass("delay");
+			clearTimeout(sethover);
+		}
+	});
+  $('.gnav_link.store').on({
+		'mouseenter':function(){
+			sethover = setTimeout(function(){
+        $(".gnav_link.store").addClass("delay");
+			},300);
+		},
+		'mouseleave':function(){
+      $(".gnav_link.store").removeClass("delay");
+			clearTimeout(sethover);
+		}
+	});
+
+
+  $('.gnav_link.news').on({
+		'mouseenter':function(){
+			sethover = setTimeout(function(){
+				$(".gnav_modal.news").removeClass("hide");
+        $(".gnav_link.news").addClass("delay");
+			},300);
+		},
+		'mouseleave':function(){
+      $(".gnav_modal.news").addClass("hide");
+      $(".gnav_link.news").removeClass("delay");
+			clearTimeout(sethover);
+		}
+	});
+  $('.gnav_link.column').on({
+		'mouseenter':function(){
+			sethover = setTimeout(function(){
+				$(".gnav_modal.column").removeClass("hide");
+        $(".gnav_link.column").addClass("delay");
+			},300);
+		},
+		'mouseleave':function(){
+      $(".gnav_modal.column").addClass("hide");
+      $(".gnav_link.column").removeClass("delay");
+			clearTimeout(sethover);
+		}
+	});
+  $('.gnav_link.works').on({
+		'mouseenter':function(){
+			sethover = setTimeout(function(){
+				$(".gnav_modal.works").removeClass("hide");
+        $(".gnav_link.works").addClass("delay");
+			},300);
+		},
+		'mouseleave':function(){
+      $(".gnav_modal.works").addClass("hide");
+      $(".gnav_link.works").removeClass("delay");
+			clearTimeout(sethover);
+		}
+	});
+
+  var counta1 = 1;
+
+  $("#news .page_buton li").click(function(){
+    if(counta1 == 1){
+      $("#news .carousel_inner:not(:animated)").animate({
+        "margin-left" : parseInt($("#news .carousel_inner").css("margin-left")) - parseInt($("#news .carousel").css("width")) + "px"
+      },"slow","swing",function(){
+        counta1 = 2;
+      });
+    }else{
+      $("#news .carousel_inner:not(:animated)").animate({
+        "margin-left" : parseInt($("#news .carousel_inner").css("margin-left")) + parseInt($("#news .carousel").css("width")) + "px"
+      },"slow","swing",function(){
+        counta1 =  1;
+      });
+    }
+  });
+
+  var timerID = setInterval(function(){
+    $("#news .page_buton li").click();
+  },5000);
+
+  $("#news .carousel_wrap").hover(function(){
+    clearInterval(timerID);
+  },function(){
+    timerID = setInterval(function(){
+      $("#news .page_buton li").click();
+    },5000);
+  });
+
+  var counta2 = 1;
+
+  $("#column .prev").click(function(){
+    if(counta2 == 1){
+      $("#column .carousel_inner:not(:animated)").animate({
+        "margin-left" : parseInt($("#column .carousel_inner").css("margin-left")) - parseInt($("#column .carousel").css("width"))*2 + "px"
+      },"slow","swing",function(){
+        counta2 = 3;
+      });
+    }else{
+      $("#column .carousel_inner:not(:animated)").animate({
+        "margin-left" : parseInt($("#column .carousel_inner").css("margin-left")) + parseInt($("#column .carousel").css("width")) + "px"
+      },"slow","swing",function(){
+        counta2 =  counta2 - 1;
+      });
+    }
+  });
+
+  $("#column .next").click(function(){
+    if(counta2 == 3){
+      $("#column .carousel_inner:not(:animated)").animate({
+        "margin-left" : parseInt($("#column .carousel_inner").css("margin-left")) + parseInt($("#column .carousel").css("width"))*2 + "px"
+      },"slow","swing",function(){
+        counta2 = 1;
+      });
+    }else{
+      $("#column .carousel_inner:not(:animated)").animate({
+        "margin-left" : parseInt($("#column .carousel_inner").css("margin-left")) - parseInt($("#column .carousel").css("width")) + "px"
+      },"slow","swing",function(){
+        counta2 =  counta2 + 1;
+      });
+    }
+  });
+
+  var timerID = setInterval(function(){
+    $("#column .next").click();
+  },5000);
+
+  $("#column .carousel_wrap").hover(function(){
+    clearInterval(timerID);
+  },function(){
+    timerID = setInterval(function(){
+      $("#column .next").click();
+    },5000);
+  });
+
+
+  $(".top_move").click(function(){
+    $('body,html').animate({
+      scrollTop: 0,
+    },500);
+  });
+
+});
+
+</script>
+</head>
+
+<body>
+<div id="all_container">
+  <div id="search">
+    <div class="section_container">
+      <a href="#" class="search_trigger no-block type-1">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <span>SEARCH</span>
+      </a>
+    </div>
+  </div><!--search-->
+
+  <div id="logo">
+    <div class="section_container">
+      <a class="no-block type-1" href="#">
+        <img src="img/sodalogo__bg.png" class="logo_img">
+      </a>
+    </div>
+  </div>
+
+  <div id="gnav">
+    <div class="section_container">
+      <div class="gnav_hide clearfix">
+        <div class="gnav_hide_logo">
+          <img src="img/sodalogo__sm.png">
+        </div>
+        <ul class="gnav_list">
+          <li><a class="gnav_link top">TOP</a></li>
+          <li class="gnav_list_news">
+            <div class="gnav_link news">ニュース
+              <div class="gnav_modal news hide">
+                <div class="gnav_modal_top clearfix">
+                  <h2>ニュース</h2>
+                  <a href="#" class="all_link type-2">すべてみる</a>
+                </div><!--gnav_modal_top-->
+                <div class="gnav_modal_main">
+                  <ul class="gnav_modal_list clearfix">
+                    <li>
+                      <div class="gnav_modal_list_img_box">
+                        <a><img src="img/1eedde226b3cb36f5517bd56c6efb0ad-360x240.png"></a>
+                      </div>
+                      <div class="gnav_modal_list_text_box">
+                        <p><a>テンプリズム<br>
+                        最終話公開！<br>
+                      　完結直前。<br>
+                        ツナシとアモウの上空に現れたのは…！？</a></p>
+                        <time class="updated" datetime="2016-12-26">2016年12月26日</time>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="gnav_modal_list_img_box">
+                        <a><img src="img/0a2948f7d2d43823f87d20fdc0fbd583-360x240.png"></a>
+                      </div>
+                      <div class="gnav_modal_list_text_box">
+                        <p><a>１週間限定公開！<br>
+                        裏テンプリズム<br>
+                      　描き下ろしイラスト公開！<br>
+                        少年少女たちの物語は、もう少しで、完結します…。</a></p>
+                        <time class="updated" datetime="2016-12-26">2016年12月26日</time>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="gnav_modal_list_img_box">
+                        <a><img src="img/72eed8986fca662a2114e9c1a4d20f88-360x240.png"></a>
+                      </div>
+                      <div class="gnav_modal_list_text_box">
+                        <p><a>テンプリズム<br>
+                        最新話公開！<br>
+                        ツナシはアモウと対峙するー。</a></p>
+                        <time class="updated" datetime="2016-12-19">2016年12月19日</time>
+                      </div>
+                    </li>
+                  </ul>
+                </div><!--gnav_modal_main-->
+              </div><!--gnav_modal-->
+            </div>
+          </li>
+          <li class="gnav_list_column">
+            <div class="gnav_link column">コラム
+              <div class="gnav_modal column hide">
+                <div class="gnav_modal_top clearfix">
+                  <h2>コラム</h2>
+                  <a href="#" class="all_link type-2">すべてみる</a>
+                </div><!--gnav_modal_top-->
+                <div class="gnav_modal_main">
+                  <ul class="gnav_modal_list clearfix">
+                    <li>
+                      <div class="gnav_modal_list_img_box">
+                        <a><img src="img/d40803ed9a2262ab73417f321b7096d8-360x240.png"></a>
+                      </div>
+                      <div class="gnav_modal_list_text_box">
+                        <p><a>テンプリズムファンアート<br>
+                        お家で作れるライタイト！</a></p>
+                        <time class="updated" datetime="2016-11-22">2016年11月22日</time>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="gnav_modal_list_img_box">
+                        <a><img src="img/b12914e1dae3ed22e2fa3bff068e2f72-360x240.png"></a>
+                      </div>
+                      <div class="gnav_modal_list_text_box">
+                        <p><a>「CAPETA」に込められた意味とは…？<br>
+                        『CAPETA』コンビニコミック版最新刊販売！<br></a></p>
+                        <time class="updated" datetime="2016-11-9">2016年11月9日</time>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="gnav_modal_list_img_box">
+                        <a><img src="img/490b46a8690e829f8399f54fe5c838ce-360x240.png"></a>
+                      </div>
+                      <div class="gnav_modal_list_text_box">
+                        <p><a>上司、後輩、本命…『め組の大吾』の熱い女子たち。<br>
+                        曽田正人漫画ヒロイン図鑑<br></a></p>
+                        <time class="updated" datetime="2016-11-5">2016年11月5日</time>
+                      </div>
+                    </li>
+                  </ul>
+                </div><!--gnav_modal_main-->
+              </div><!--gnav_modal-->
+            </div>
+          </li>
+          <li class="gnav_list_works">
+            <div class="gnav_link works">作品一覧
+              <div class="gnav_modal works hide">
+                <ul class="gnav_modal_list_works">
+                  <li><a class="no-block type-2">テンプリズム</a></li>
+                  <li><a class="no-block type-2">シャカリキ！</a></li>
+                  <li><a class="no-block type-2">め組の大吾</a></li>
+                  <li><a class="no-block type-2">昴</a></li>
+                  <li><a class="no-block type-2">capeta</a></li>
+                  <li><a class="no-block type-2">MOON</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a class="gnav_link gallely">ギャラリー</a>
+          </li>
+          <li>
+            <a class="gnav_link profile">プロフィール</a>
+          </li>
+          <li>
+            <a class="gnav_link store">ストア</a>
+          </li>
+        </ul>
+      </div><!--gnav_hide-->
+
+      <ul class="gnav_list">
+        <li><a class="gnav_link top">TOP</a></li>
+        <li class="gnav_list_news">
+          <div class="gnav_link news">ニュース
+            <div class="gnav_modal news hide">
+              <div class="gnav_modal_top clearfix">
+                <h2>ニュース</h2>
+                <a href="#" class="all_link type-2">すべてみる</a>
+              </div><!--gnav_modal_top-->
+              <div class="gnav_modal_main">
+                <ul class="gnav_modal_list clearfix">
+                  <li>
+                    <div class="gnav_modal_list_img_box">
+                      <a><img src="img/1eedde226b3cb36f5517bd56c6efb0ad-360x240.png"></a>
+                    </div>
+                    <div class="gnav_modal_list_text_box">
+                      <p><a>テンプリズム<br>
+                      最終話公開！<br>
+                    　完結直前。<br>
+                      ツナシとアモウの上空に現れたのは…！？</a></p>
+                      <time class="updated" datetime="2016-12-26">2016年12月26日</time>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="gnav_modal_list_img_box">
+                      <a><img src="img/0a2948f7d2d43823f87d20fdc0fbd583-360x240.png"></a>
+                    </div>
+                    <div class="gnav_modal_list_text_box">
+                      <p><a>１週間限定公開！<br>
+                      裏テンプリズム<br>
+                    　描き下ろしイラスト公開！<br>
+                      少年少女たちの物語は、もう少しで、完結します…。</a></p>
+                      <time class="updated" datetime="2016-12-26">2016年12月26日</time>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="gnav_modal_list_img_box">
+                      <a><img src="img/72eed8986fca662a2114e9c1a4d20f88-360x240.png"></a>
+                    </div>
+                    <div class="gnav_modal_list_text_box">
+                      <p><a>テンプリズム<br>
+                      最新話公開！<br>
+                      ツナシはアモウと対峙するー。</a></p>
+                      <time class="updated" datetime="2016-12-19">2016年12月19日</time>
+                    </div>
+                  </li>
+                </ul>
+              </div><!--gnav_modal_main-->
+            </div><!--gnav_modal-->
+          </div>
+        </li>
+        <li class="gnav_list_column">
+          <div class="gnav_link column">コラム
+            <div class="gnav_modal column hide">
+              <div class="gnav_modal_top clearfix">
+                <h2>コラム</h2>
+                <a href="#" class="all_link type-2">すべてみる</a>
+              </div><!--gnav_modal_top-->
+              <div class="gnav_modal_main">
+                <ul class="gnav_modal_list clearfix">
+                  <li>
+                    <div class="gnav_modal_list_img_box">
+                      <a><img src="img/d40803ed9a2262ab73417f321b7096d8-360x240.png"></a>
+                    </div>
+                    <div class="gnav_modal_list_text_box">
+                      <p><a>テンプリズムファンアート<br>
+                      お家で作れるライタイト！</a></p>
+                      <time class="updated" datetime="2016-11-22">2016年11月22日</time>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="gnav_modal_list_img_box">
+                      <a><img src="img/b12914e1dae3ed22e2fa3bff068e2f72-360x240.png"></a>
+                    </div>
+                    <div class="gnav_modal_list_text_box">
+                      <p><a>「CAPETA」に込められた意味とは…？<br>
+                      『CAPETA』コンビニコミック版最新刊販売！<br></a></p>
+                      <time class="updated" datetime="2016-11-9">2016年11月9日</time>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="gnav_modal_list_img_box">
+                      <a><img src="img/490b46a8690e829f8399f54fe5c838ce-360x240.png"></a>
+                    </div>
+                    <div class="gnav_modal_list_text_box">
+                      <p><a>上司、後輩、本命…『め組の大吾』の熱い女子たち。<br>
+                      曽田正人漫画ヒロイン図鑑<br></a></p>
+                      <time class="updated" datetime="2016-11-5">2016年11月5日</time>
+                    </div>
+                  </li>
+                </ul>
+              </div><!--gnav_modal_main-->
+            </div><!--gnav_modal-->
+          </div>
+        </li>
+        <li class="gnav_list_works">
+          <div class="gnav_link works">作品一覧
+            <div class="gnav_modal works hide">
+              <ul class="gnav_modal_list_works">
+                <li><a class="no-block type-2">テンプリズム</a></li>
+                <li><a class="no-block type-2">シャカリキ！</a></li>
+                <li><a class="no-block type-2">め組の大吾</a></li>
+                <li><a class="no-block type-2">昴</a></li>
+                <li><a class="no-block type-2">capeta</a></li>
+                <li><a class="no-block type-2">MOON</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a class="gnav_link gallely">ギャラリー</a>
+        </li>
+        <li>
+          <a class="gnav_link profile">プロフィール</a>
+        </li>
+        <li>
+          <a class="gnav_link store">ストア</a>
+        </li>
+      </ul>
+    </div><!--section_container-->
+  </div><!--gnav-->
+
+  <div id="top">
+    <div class="section_container clearfix">
+      <div class="box large">
+        <a>
+          <div class="box_img large">
+            <img src="img/1eedde226b3cb36f5517bd56c6efb0ad-759x600.png">
+          </div>
+          <div class="box_text">
+            <h2 class="large">テンプリズム最新話公開！完結直前。ツナシとアモウの上空に現れたのは…！？</h2>
+            <div class="box_date">
+              <time class="updated" datetime="2017-01-09">2017年1月9日</time>
+            </div>
+          </div>
+        </a>
+      </div><!--box-->
+      <div class="box">
+        <a>
+          <div class="box_img">
+            <img src="img/0a2948f7d2d43823f87d20fdc0fbd583-378x300.png">
+          </div>
+          <div class="box_text">
+            <h2>１週間限定公開！裏テンプリズム描き下ろしイラスト公開！少年少女たちの物語は、もう少しで、
+            完結します…。</h2>
+            <div class="box_date">
+              <time class="updated" datetime="2016-12-26">2016年12月26日</time>
+            </div>
+          </div>
+        </a>
+      </div><!--box-->
+      <div class="box">
+        <a>
+          <div class="box_img">
+            <img src="img/72eed8986fca662a2114e9c1a4d20f88-378x300.png">
+          </div>
+          <div class="box_text middle">
+            <h2>テンプリズム最新話公開！ツナシはアモウと対峙するー。</h2>
+            <div class="box_date">
+              <time class="updated" datetime="2016-12-19">2016年12月19日</time>
+            </div>
+          </div>
+        </a>
+      </div><!--box-->
+    </div><!--section_container-->
+  </div><!--top-->
+
+  <div id="news">
+    <div class="section_container">
+      <div class="title_border"><span class="section_title">新着ニュース　</span></div>
+      <div class="carousel_wrap">
+        <div class="carousel">
+          <div class="carousel_inner clearfix">
+            <ul class="carousel_container">
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/1eedde226b3cb36f5517bd56c6efb0ad-378x300.png">
+                  </div>
+                  <div class="box_text">
+                    <h2>テンプリズム最新話公開！完結直前。ツナシとアモウの上空に現れたのは…！？</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2017-01-09">2017年1月9日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/0a2948f7d2d43823f87d20fdc0fbd583-378x300.png">
+                  </div>
+                  <div class="box_text">
+                    <h2>１週間限定公開！裏テンプリズム描き下ろしイラスト公開！少年少女たちの物語は、もう少しで、
+                    完結します…。</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2016-12-26">2016年12月26日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/72eed8986fca662a2114e9c1a4d20f88-378x300.png">
+                  </div>
+                  <div class="box_text">
+                    <h2>テンプリズム最新話公開！ツナシはアモウと対峙するー。</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2016-12-19">2016年12月19日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+            </ul><!--carousel_container-->
+            <ul class="carousel_container">
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/1eedde226b3cb36f5517bd56c6efb0ad-378x300.png">
+                  </div>
+                  <div class="box_text">
+                    <h2>テンプリズム最新話公開！完結直前。ツナシとアモウの上空に現れたのは…！？</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2017-01-09">2017年1月9日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/0a2948f7d2d43823f87d20fdc0fbd583-378x300.png">
+                  </div>
+                  <div class="box_text">
+                    <h2>１週間限定公開！裏テンプリズム描き下ろしイラスト公開！少年少女たちの物語は、もう少しで、
+                    完結します…。</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2016-12-26">2016年12月26日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/72eed8986fca662a2114e9c1a4d20f88-378x300.png">
+                  </div>
+                  <div class="box_text">
+                    <h2>テンプリズム最新話公開！ツナシはアモウと対峙するー。</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2016-12-19">2016年12月19日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+            </ul><!--carousel_container-->
+          </div>
+        </div><!--carousel-->
+        <ul class="page_buton clearfix">
+          <li class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+          <li class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+        </ul>
+      </div><!--carousel_wrap-->
+    </div><!--section_container-->
+  </div><!--new-->
+
+  <div id="column">
+    <div class="section_container">
+      <div class="title_border"><span class="section_title">コラム　</span></div>
+      <p class="sub_title">ここでしか読めないマル秘話が満載！</p>
+      <div class="carousel_wrap">
+        <div class="carousel">
+          <div class="carousel_inner clearfix">
+            <ul class="carousel_container">
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/d40803ed9a2262ab73417f321b7096d8-378x300.png">
+                  </div>
+                  <div class="box_text">
+                    <h2>テンプリズムファンアートお家で作れるライタイト！</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2016-11-22">2016年11月22日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/b12914e1dae3ed22e2fa3bff068e2f72-378x300.png">
+                  </div>
+                  <div class="box_text">
+                    <h2>「CAPETA」に込められた意味とは…？『CAPETA』コンビニコミック版最新刊販売！</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2016-11-29">2016年11月29日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/490b46a8690e829f8399f54fe5c838ce-378x300.png">
+                  </div>
+                  <div class="box_text">
+                    <h2>上司、後輩、本命…『め組の大吾』の熱い女子たち。曽田正人漫画ヒロイン図鑑。</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2016-11-5">2016年11月5日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+            </ul><!--carousel_container-->
+            <ul class="carousel_container">
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/5784fac41fa52560ef525b9604435465-378x300.jpg">
+                  </div>
+                  <div class="box_text">
+                    <h2>漫画の天パキャラのくるくるを数えてみたら、大仏16体分を越えた。</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2016-11-22">2016年11月22日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/7fd961ed3f9a90bfc0523b024d3bee10-378x300.png">
+                  </div>
+                  <div class="box_text">
+                    <h2>ハロウィン限定！『テンプリズム』ニキのハロウィン待ち受け配信！</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2016-10-31">2016年10月31日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/6b5cca4b42dfc984fa631837cf3d9f40-378x300.png">
+                  </div>
+                  <div class="box_text">
+                    <h2>ネタバレ注意！テンプリズム最新81話の感想まとめ！新ヒロインあらわる…！？</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2016-10-25">2016年10月25日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+            </ul><!--carousel_container-->
+            <ul class="carousel_container">
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/f1799585371793810424303c79b318cd-378x300.png">
+                  </div>
+                  <div class="box_text">
+                    <h2>『昴』☓『テンプリズム』もし、ニキがバレエをやっていら…？</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2016-10-21">2016年10月21日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/2fb660fc204e075a14ef5dbc65f24cc8-378x300.png">
+                  </div>
+                  <div class="box_text">
+                    <h2>UZIさんの似顔絵＆『フリースタイルダンジョン』収録後に描き下ろしたイラストを公開中！</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2016-10-19">2016年10月19日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+              <li class="box">
+                <a>
+                  <div class="box_img">
+                    <img src="img/ad1d350c6bfe99e39b407f0b477b79b3-378x300.png">
+                  </div>
+                  <div class="box_text">
+                    <h2>『MOON』そのタイトルに込められた意味とは。曽田正人のバレエ漫画『MOON』１巻無料公開中！</h2>
+                    <div class="box_date">
+                      <time class="updated" datetime="2016-10-18">2016年10月18日</time>
+                    </div>
+                  </div>
+                </a>
+              </li><!--box-->
+            </ul><!--carousel_container-->
+          </div>
+        </div><!--carousel-->
+        <ul class="page_buton clearfix">
+          <li class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+          <li class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+        </ul>
+      </div><!--carousel_wrap-->
+    </div><!--section_container-->
+  </div><!--new-->
+
+  <div id="works">
+    <div class="section_container">
+      <div class="title_border"><span class="section_title">作品一覧　</span></div>
+      <ul class="works_list clearfix">
+        <li class="box">
+          <a>
+            <div class="box_img">
+              <img src="img/tenth-378x300.jpg">
+            </div>
+            <div class="box_text middle">
+              <h2>テンプリズム</h2>
+              <div class="works_status">連載中</div>
+            </div>
+          </a>
+        </li><!--box-->
+        <li class="box">
+          <a>
+            <div class="box_img">
+              <img src="img/shakariki-378x300.jpg">
+            </div>
+            <div class="box_text middle">
+              <h2>シャカリキ！</h2>
+              <div class="works_status">1992年-1995年</div>
+            </div>
+          </a>
+        </li><!--box-->
+        <li class="box">
+          <a>
+            <div class="box_img">
+              <img src="img/daigo-378x300.jpg">
+            </div>
+            <div class="box_text middle">
+              <h2>め組の大吾</h2>
+              <div class="works_status">1995年-1999年</div>
+            </div>
+          </a>
+        </li><!--box-->
+        <li class="box">
+          <a>
+            <div class="box_img">
+              <img src="img/subaru-378x300.jpg">
+            </div>
+            <div class="box_text middle">
+              <h2>昴</h2>
+              <div class="works_status">2000年-2002年</div>
+            </div>
+          </a>
+        </li><!--box-->
+        <li class="box">
+          <a>
+            <div class="box_img">
+              <img src="img/capeta-378x300.jpg">
+            </div>
+            <div class="box_text middle">
+              <h2>ｃａｐｅｔａ</h2>
+              <div class="works_status">2003年-2005年</div>
+            </div>
+          </a>
+        </li><!--box-->
+        <li class="box">
+          <a>
+            <div class="box_img">
+              <img src="img/moon-378x300.jpg">
+            </div>
+            <div class="box_text middle">
+              <h2>ＭＯＯＮ</h2>
+              <div class="works_status">2007年-2011年</div>
+            </div>
+          </a>
+        </li><!--box-->
+      </ul>
+    </div><!--section_container-->
+  </div><!--works-->
+
+  <div id="sub">
+    <div class="section_container clearfix">
+      <div id="news_list">
+        <div class="title_border"><span class="section_title">ニュース一覧　</span></div>
+        <p class="sub_title">曽田正人に関する最新情報をお届けしています！</p>
+        <div class="news_list_box clearfix">
+          <div class="news_list_img">
+            <a><img src="img/1eedde226b3cb36f5517bd56c6efb0ad-260x170.png"></a>
+          </div>
+          <div class="news_list_text">
+            <a>テンプリズム<br>
+            最新話公開！<br>
+            完結直前。<br>
+            ツナシとアモウの上空に現れたのは…！？</a>
+            <time class="updated" datetime="2017-1-9">2017年1月9日</time>
+            <p>最新話が公開されました！ 今回の扉絵は、こちらです！↓ ツナシとアモウ […]</p>
+            <ul>
+              <li><a>TOP</a></li>
+              <li><a>テンプリズム|ニュース</a></li>
+              <li><a>ニュース</a></li>
+            </ul>
+          </div>
+        </div><!--news_list_box-->
+        <div class="news_list_box clearfix">
+          <div class="news_list_img">
+            <a><img src="img/0a2948f7d2d43823f87d20fdc0fbd583-260x170.png"></a>
+          </div>
+          <div class="news_list_text">
+            <a>１週間限定公開！<br>
+            裏テンプリズム<br>
+            描き下ろしイラスト公開！<br>
+            少年少女たちの物語は、もう少しで、完結します。</a>
+            <time class="updated" datetime="2016-12-26">2016年12月26日</time>
+            <p>今週は連載はお休みですが… 本日12月26日（月）、『裏テンプリズム』 […]</p>
+            <ul>
+              <li><a>TOP</a></li>
+              <li><a>テンプリズム|ニュース</a></li>
+              <li><a>ニュース</a></li>
+            </ul>
+          </div>
+        </div><!--news_list_box-->
+        <div class="news_list_box clearfix">
+          <div class="news_list_img">
+            <a><img src="img/72eed8986fca662a2114e9c1a4d20f88-260x170.png"></a>
+          </div>
+          <div class="news_list_text">
+            <a>テンプリズム<br>
+            最新話公開！<br>
+            ツナシはアモウと対峙するー。</a>
+            <time class="updated" datetime="2016-12-19">2016年12月19日</time>
+            <p>最新話が公開されました！ 今回の扉絵は、こちらです！↓ 右眼に、眼帯の […]</p>
+            <ul>
+              <li><a>TOP</a></li>
+              <li><a>テンプリズム|ニュース</a></li>
+              <li><a>ニュース</a></li>
+            </ul>
+          </div>
+        </div><!--news_list_box-->
+        <div class="news_list_box clearfix">
+          <div class="news_list_img">
+            <a><img src="img/2546884e5c0b1d35aaafb22db45ca5a4-260x170.png"></a>
+          </div>
+          <div class="news_list_text">
+            <a>１週間限定公開！<br>
+            裏テンプリズム<br>
+            描き下ろしイラスト公開！<br>
+            一足先に、ニキのサンタクロース姿が…</a>
+            <time class="updated" datetime="2016-12-19">2016年12月19日</time>
+            <p>『テンプリズム』はお休みですが… 描き下ろしイラストシリーズ 『裏テン […]</p>
+            <ul>
+              <li><a>TOP</a></li>
+              <li><a>ニュース</a></li>
+            </ul>
+          </div>
+        </div><!--news_list_box-->
+        <div class="news_list_box effect clearfix">
+          <div class="news_list_img">
+            <a><img src="img/77ac4a879f4a6dd4aa17d7361c050544-260x170.png"></a>
+          </div>
+          <div class="news_list_text">
+            <a>テンプリズム<br>
+            最新話公開！<br>
+            残された、ベルナとユイは…？</a>
+            <time class="updated" datetime="2016-12-5">2016年12月5日</time>
+            <p>最新話が公開されました！ 扉絵は、こちらです！↓   ネタバ […]</p>
+            <ul>
+              <li><a>ニュース</a></li>
+            </ul>
+          </div>
+        </div><!--news_list_box-->
+        <div class="news_list_box clearfix">
+          <div class="news_list_img">
+            <a><img src="img/6d99168961f1faff28c082d25e870ca2-260x170.png"></a>
+          </div>
+          <div class="news_list_text">
+            <a>『テンプリズム』<br>
+            いよいよ完結へ。<br>
+            2017年2月末に、<br>
+            最終巻販売決定！！</a>
+            <time class="updated" datetime="2016-12-5">2016年12月5日</time>
+            <p>『テンプリズム』最新刊が、11/30（水）に発売されました。 そしてそ […]</p>
+            <ul>
+              <li><a>TOP</a></li>
+              <li><a>テンプリズム|ニュース</a></li>
+              <li><a>ニュース</a></li>
+            </ul>
+          </div>
+        </div><!--news_list_box-->
+        <div class="news_list_box clearfix">
+          <div class="news_list_img">
+            <a><img src="img/16cbeb028d236fd575fa33a77e770312-260x170.png"></a>
+          </div>
+          <div class="news_list_text">
+            <a>１週間限定！<br>
+            『テンプリズム』<br>
+            描き下ろしイラスト公開！これは、骨の国のＳＮＳ…？</a>
+            <time class="updated" datetime="2016-11-28">2016年11月28日</time>
+            <p>『テンプリズム』はお休みですが… 描き下ろしイラストシリーズ 『裏テン […]</p>
+            <ul>
+              <li><a>TOP</a></li>
+              <li><a>テンプリズム|ニュース</a></li>
+              <li><a>ニュース</a></li>
+            </ul>
+          </div>
+        </div><!--news_list_box-->
+        <div class="news_list_box clearfix">
+          <div class="news_list_img">
+            <a><img src="img/0993fd3a26521457e88f1406f6f93175-260x170.png"></a>
+          </div>
+          <div class="news_list_text">
+            <a>新刊販売まで、<br>
+            あと１週間！<br>
+            テンプリズム<br>
+            １１巻の表紙を先行公開！</a>
+            <time class="updated" datetime="2016-11-23">2016年11月23日</time>
+            <p>『テンプリズム』新刊発売まで、あと１週間となりました！！ １週間前の今 […]</p>
+            <ul>
+              <li><a>TOP</a></li>
+              <li><a>テンプリズム|ニュース</a></li>
+              <li><a>ニュース</a></li>
+            </ul>
+          </div>
+        </div><!--news_list_box-->
+        <div class="news_list_box clearfix">
+          <div class="news_list_img">
+            <a><img src="img/d40803ed9a2262ab73417f321b7096d8-260x170.png"></a>
+          </div>
+          <div class="news_list_text">
+            <a>テンプリズムファンアート<br>
+            お家で作れるライタイト！</a>
+            <time class="updated" datetime="2016-11-22">2016年11月22日</time>
+            <p>こんにちは、担当です。 今、テンプリズムの世界をファンの方が再現してく […]</p>
+            <ul>
+              <li><a>TOP</a></li>
+              <li><a>コラム</a></li>
+              <li><a>テンプリズム|ニュース</a></li>
+              <li><a>ニュース</a></li>
+            </ul>
+          </div>
+        </div><!--news_list_box-->
+        <div class="news_list_box clearfix">
+          <div class="news_list_img">
+            <a><img src="img/202493dc5f0c24fada3b2c6633131b29-260x170.jpg"></a>
+          </div>
+          <div class="news_list_text">
+            <a>ついに完結！<br>
+              カペタが果てに見たものとは…<br>
+            『CAPETA』コンビニコミック版最終巻販売！</a>
+            <time class="updated" datetime="2016-11-22">2016年11月22日</time>
+            <p>本日11月22日（火）に、コンビニコミック版『capeta』最終巻「F […]</p>
+            <ul>
+              <li><a>TOP</a></li>
+              <li><a>ニュース</a></li>
+            </ul>
+          </div>
+        </div><!--news_list_box-->
+        <div class="news_list_box clearfix">
+          <div class="news_list_img">
+            <a><img src="img/760d246a33c2f2e8701393ce857ae6d3-260x170.png"></a>
+          </div>
+          <div class="news_list_text">
+            <a>テンプリズム<br>
+              最新話公開！<br>
+            過去のアモウは何を想う…？</a>
+            <time class="updated" datetime="2016-11-21">2016年11月21日</time>
+            <p>＼『テンプリズム』最新話が公開されました！／ ネタバレにならないように […]</p>
+            <ul>
+              <li><a>TOP</a></li>
+              <li><a>テンプリズム|ニュース</a></li>
+              <li><a>ニュース</a></li>
+            </ul>
+          </div>
+        </div><!--news_list_box-->
+
+        <ul class="news_list_paging">
+          <li><a class="current">1</a></li>
+          <li><a>2</a></li>
+          <li><a>3</a></li><span>　…　</span>
+          <li><a>67</a></li>
+          <li><a>→</a></li>
+        </ul>
+      </div><!--news_list-->
+      <div id="latest_news">
+        <div class="latest_news_container">
+          <h2 class="latest_news_title"><span>最新記事</span></h2>
+          <div class="box">
+            <a>
+              <div class="box_img">
+                <img src="img/1eedde226b3cb36f5517bd56c6efb0ad-360x240.png">
+              </div>
+              <div class="box_text middle">
+                <h2>テンプリズム<br>
+                最新話公開！<br>
+                ツナシとアモウの上空に現れたのは…！？</h2>
+                <time class="updated" datetime="2017-1-9">2017年1月9日</time>
+              </div>
+            </a>
+          </div><!--box-->
+          <div class="box">
+            <a>
+              <div class="box_img">
+                <img src="img/0a2948f7d2d43823f87d20fdc0fbd583-360x240.png">
+              </div>
+              <div class="box_text middle">
+                <h2>１週間限定公開！<br>
+                裏テンプリズム<br>
+                描き下ろしイラスト公開！<br>
+                少年少女たちの物語は、もう少しで、完結します。</h2>
+                <time class="updated" datetime="2016-12-26">2016年12月26日</time>
+              </div>
+            </a>
+          </div><!--box-->
+          <div class="box">
+            <a>
+              <div class="box_img">
+                <img src="img/72eed8986fca662a2114e9c1a4d20f88-360x240.png">
+              </div>
+              <div class="box_text middle">
+                <h2>テンプリズム<br>
+                最新話公開！<br>
+                ツナシは、アモウと対峙するー。</h2>
+                <time class="updated" datetime="2016-12-19">2016年12月19日</time>
+              </div>
+            </a>
+          </div><!--box-->
+          <div class="box last-pre">
+            <a>
+              <div class="box_img">
+                <img src="img/2546884e5c0b1d35aaafb22db45ca5a4-360x240.png">
+              </div>
+              <div class="box_text middle">
+                <h2>１週間限定公開！<br>
+                裏テンプリズム<br>
+                描き下ろしイラスト公開！<br>
+                一足先に、ニキのサンタクロース姿が…</h2>
+                <time class="updated" datetime="2016-12-15">2016年12月15日</time>
+              </div>
+            </a>
+          </div><!--box-->
+          <div class="box last">
+            <a>
+              <div class="box_img">
+                <img src="img/77ac4a879f4a6dd4aa17d7361c050544-360x240.png">
+              </div>
+              <div class="box_text middle">
+                <h2>テンプリズム<br>
+                最新話公開！<br>
+                残された、ベルナとユイは…？</h2>
+                <time class="updated" datetime="2016-12-6">2016年12月6日</time>
+              </div>
+            </a>
+          </div><!--box-->
+        </div><!--latest_news_container-->
+      </div><!--latest_news-->
+    </div><!--section_container-->
+  </div>
+
+  <div id="footer">
+    <div class="footer_container">
+      <p><a class="footer_top_logo"><img src="img/sodalogo__bg__wh.png"></a></p>
+      <ul class="footer_list">
+        <li><a class="white">SODAMASAHITO</a></li>
+        <li><a class="white">ニュース</a></li>
+        <li><a class="white">コラム</a></li>
+        <li><a class="white">作品一覧</a></li>
+        <li><a class="white">ギャラリー</a></li>
+        <li><a class="white">プロフィール</a></li>
+        <li><a class="white">ストア</a></li>
+      </ul>
+      <div class="sns_container">
+        <h3>曽田正人　公式ＳＮＳ</h3>
+        <div class="sns_list">
+          <a class="insta"></a>
+          <a class="facebook"></a>
+          <a class="twitter"></a>
+        </div>
+      </div>
+      <div class="official_twitter">
+        <h3>テンプリズム公式TWITTER</h3>
+        <a><img src="img/tenth_twitter_banner.gif"></a>
+      </div>
+
+      <div class="official_page">
+        <h3>テンプリズム公式ページ</h3>
+        <a><img src="img/tumblr_njmt6gVrk51tbk259o1_1280.png"></a>
+        <p>※クリックすると小学館の「テンプリズム」紹介ページが開きます。</p>
+      </div>
+
+      <a href="#" class="top_move"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+
+      <div class="footer_last">
+        <ul>
+          <li>『シャカリキ！』©MASAHITO SODA</li>
+          <li>『め組の大吾 』©MASAHITO SODA</li>
+          <li>『昴』©MASAHITO SODA</li>
+          <li>『CAPETA 』©MASAHITO SODA</li>
+          <li>『MOON 』©MASAHITO SODA</li>
+          <li>『テンプリズム』©MASAHITO SODA</li>
+        </ul>
+      </div>
+
+    </div><!--footer_container-->
+  </div><!--footer-->
+
+</div><!-- oll_container-->
+
+</body>
+
+</html>

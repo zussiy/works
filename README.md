@@ -69,7 +69,7 @@
 
 ## 「マチネの終わりに　特設サイト」・「曽田正人　公式サイト」のコピーについて  
 * コルク制作のWEBサイトのうち、画像ダウンロード可能のものを、勉強として制作したもの  
-* それぞれの制作結果は以下（どちらも検索にかからないようmetaタグを設定済）  
+* それぞれの制作結果は下記のとおり（どちらも検索にかからないようmetaタグを設定済）  
 	* 「マチネの終わりに　特設サイト」コピーURL：http://zushimanga.undo.jp/Matine/base.html  
 	* 「曽田正人　公式サイト」コピーURL：http://zushimanga.undo.jp/sodamasato/base.html  
 * それぞれHTMLおよびCSSのファイル名は下記のとおり（共にJava ScriptはHeaderに記載）  

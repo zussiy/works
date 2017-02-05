@@ -638,6 +638,7 @@ background: #fff;
 	transition-duration: 2s;
 }
 .message_sub_amazon_button {
+	display: inline-block;
 	background: linear-gradient(#f7dfa5, #f0c14b);
 border-color: #ae8f41;
 color: #211f1c;

@@ -36,6 +36,7 @@
 					Review_main_genre.html（ジャンル別）  
 					Review_main_point.html（評価別）  
 			* CSS  
+					review_main_common.css(共通部分）  
 					review_main_coding.css（作品名別）  
 					review_main_genre_coding.css（ジャンル別）  
 					review_main_point_coding.css（評価別）  
